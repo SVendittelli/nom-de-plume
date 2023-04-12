@@ -1,6 +1,6 @@
 // Require the necessary discord.js classes
 const { Client, Events, GatewayIntentBits } = require("discord.js");
-const { token } = require("./config.json");
+const { token, username } = require("./config.json");
 
 const rDay = new Date(2023, 4, 10);
 
@@ -29,7 +29,11 @@ client.on(Events.PresenceUpdate, async (_oldPresence, newPresence) => {
     return console.error("Client cannot change the user's nickname");
   }
 
-  if (newPresence.user.tag === "Vendittelli#9785") {
+  if (
+    newPresence.user.tag.localeCompare(username, undefined, {
+      sensitivity: "accent",
+    }) === 0
+  ) {
     const daysRemaining = Math.ceil(
       (rDay - new Date()) / (24 * 60 * 60 * 1000)
     );
@@ -44,7 +48,7 @@ client.on(Events.PresenceUpdate, async (_oldPresence, newPresence) => {
     const newNickname = `${me.nickname}`.replace(/\[.*\]/, `[${replacement}]`);
 
     console.log(
-      `Replacing Vendittelli#9785 nickname: ${me.nickname} -> ${newNickname}`
+      `Replacing ${username}'s nickname: ${me.nickname} -> ${newNickname}`
     );
     await me.setNickname(newNickname);
   }
