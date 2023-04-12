@@ -9,12 +9,13 @@ A discord bot to change a user's nickname automatically.
 
 ## Building
 
-Create a file called `config.json`:
+Create a file called `config.json` containing:
 
 ```json
 {
   "token": "<bot token>",
-  "username": "<username to update>"
+  "guildId": "<server id>",
+  "userId": "<user id to update>"
 }
 ```
 
