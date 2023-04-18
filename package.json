@@ -1,6 +1,6 @@
 {
   "name": "nom-de-plume",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "A discord bot to change a user's nickname automatically",
   "main": "index.js",
   "scripts": {
