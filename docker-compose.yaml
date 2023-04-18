@@ -1,0 +1,4 @@
+services:
+  nom-de-plume:
+    build: .
+    env_file: .env

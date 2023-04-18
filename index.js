@@ -1,8 +1,7 @@
-// Require the necessary discord.js classes
 const { Client, Events, GatewayIntentBits } = require("discord.js");
 const cron = require("node-cron");
-const { token, guildId, userId } = require("./config.json");
 
+const { token, guildId, userId } = process.env;
 const rDay = new Date(2023, 4, 10);
 
 // Create a new client instance
