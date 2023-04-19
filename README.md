@@ -1,22 +1,20 @@
 # Nom de Plume
 
-A discord bot to change a user's nickname automatically.
+A discord bot to automatically update a user's nickname every day.
 
 ## Dependencies
 
-- Node v16+
+- Node v18+
 - Docker
 
 ## Building
 
-Create a file called `config.json` containing:
+Create a file called `.env` containing:
 
-```json
-{
-  "token": "<bot token>",
-  "guildId": "<server id>",
-  "userId": "<user id to update>"
-}
+```env
+token=<bot token>
+guildId=<server id>
+userId=<user id to update>
 ```
 
 ```sh
@@ -36,4 +34,12 @@ To run the bot in development mode, use the following command:
 
 ```sh
 npm start
+```
+
+## Tests
+
+The tests can be run using:
+
+```sh
+npm test
 ```
