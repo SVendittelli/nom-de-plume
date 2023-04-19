@@ -1,8 +1,11 @@
-const { Client, Events, GatewayIntentBits } = require("discord.js");
-const cron = require("node-cron");
+const { Client, Events, GatewayIntentBits } = require('discord.js');
+const { DateTime } = require('luxon');
+const cron = require('node-cron');
 
+const durationUntil = require('./durationUntil');
+
+require('dotenv').config();
 const { token, guildId, userId } = process.env;
-const rDay = new Date(2023, 4, 10);
 
 // Create a new client instance
 const client = new Client({
@@ -32,10 +35,18 @@ const updateNickname = async () => {
     return console.error("Client cannot change the user's nickname");
   }
 
-  const daysRemaining = Math.ceil((rDay - new Date()) / (24 * 60 * 60 * 1000));
+  const today = DateTime.now().setZone('Europe/London').startOf('day');
+  const end = DateTime.local(2023, 5, 10, { zone: 'Europe/London' });
+
+  const { duration, humanReadableDuration } = durationUntil(today, end);
 
   const replacement =
-    daysRemaining > 0 ? `${daysRemaining} days left` : "Free?";
+    duration == 0
+      ? 'Free today?'
+      : duration > 0
+      ? `${humanReadableDuration} left`
+      : `Free? ${humanReadableDuration} waiting`;
+
   const newNickname = `${memberToChange.nickname}`.replace(
     /\[.*\]/,
     `[${replacement}]`
@@ -50,4 +61,4 @@ const updateNickname = async () => {
 // Log in to Discord with your client's token
 client.login(token);
 
-cron.schedule("0 0 * * *", updateNickname);
+cron.schedule('0 0 * * *', updateNickname);
