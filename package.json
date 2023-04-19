@@ -1,20 +1,27 @@
 {
   "name": "nom-de-plume",
   "version": "1.2.0",
+  "private": true,
   "description": "A discord bot to change a user's nickname automatically",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SVendittelli/nom-de-plume.git"
+  },
+  "license": "MIT",
+  "author": "Sam Vendittelli <sam.vendittelli@hotmail.com>",
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Sam Vendittelli <sam.vendittelli@hotmail.com>",
-  "license": "MIT",
   "dependencies": {
     "discord.js": "14.9.0",
     "node-cron": "3.0.2"
   },
   "devDependencies": {
     "eslint": "8.38.0",
-    "nodemon": "2.0.22"
+    "nodemon": "2.0.22",
+    "prettier": "2.8.7",
+    "prettier-plugin-packagejson": "2.4.3"
   }
 }
