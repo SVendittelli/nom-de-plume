@@ -10,11 +10,11 @@
   "author": "Sam Vendittelli <sam.vendittelli@hotmail.com>",
   "license": "MIT",
   "dependencies": {
-    "discord.js": "^14.9.0",
-    "node-cron": "^3.0.2"
+    "discord.js": "14.9.0",
+    "node-cron": "3.0.2"
   },
   "devDependencies": {
-    "eslint": "^8.38.0",
-    "nodemon": "^2.0.22"
+    "eslint": "8.38.0",
+    "nodemon": "2.0.22"
   }
 }
