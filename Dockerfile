@@ -10,4 +10,4 @@ FROM gcr.io/distroless/nodejs18-debian11:latest as production
 COPY --from=build /app /app
 WORKDIR /app
 
-CMD [ "index.js" ]
+CMD [ "src/index.js" ]

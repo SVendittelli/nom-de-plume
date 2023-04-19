@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`durationUntil day in the future 1`] = `"1 month, 1 day"`;
+
+exports[`durationUntil day in the past 1`] = `"1 year"`;
+
+exports[`durationUntil same day 1`] = `""`;
