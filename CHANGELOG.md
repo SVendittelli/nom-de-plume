@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/SVendittelli/nom-de-plume/compare/v1.3.14...v1.4.0) (2023-05-12)
+
+
+### Features
+
+* update end date to 2nd June ([3e19e79](https://github.com/SVendittelli/nom-de-plume/commit/3e19e79ca4221ba70755be0b89b6d774424d8f24))
+
 ## [1.3.14](https://github.com/SVendittelli/nom-de-plume/compare/v1.3.13...v1.3.14) (2023-05-06)
 
 ## [1.3.13](https://github.com/SVendittelli/nom-de-plume/compare/v1.3.12...v1.3.13) (2023-05-06)
