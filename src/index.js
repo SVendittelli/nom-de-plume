@@ -36,7 +36,7 @@ const updateNickname = async () => {
   }
 
   const today = DateTime.now().setZone('Europe/London').startOf('day');
-  const end = DateTime.local(2023, 5, 10, { zone: 'Europe/London' });
+  const end = DateTime.local(2023, 6, 2, { zone: 'Europe/London' });
 
   const { duration, humanReadableDuration } = durationUntil(today, end);
 
@@ -61,4 +61,4 @@ const updateNickname = async () => {
 // Log in to Discord with your client's token
 client.login(token);
 
-cron.schedule('0 0 * * *', updateNickname);
+cron.schedule('0 23 * * *', updateNickname);
