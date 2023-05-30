@@ -35,17 +35,12 @@ const updateNickname = async () => {
     return console.error("Client cannot change the user's nickname");
   }
 
-  const today = DateTime.now().setZone('Europe/London').startOf('day');
-  const end = DateTime.local(2023, 6, 2, { zone: 'Europe/London' });
+  const now = DateTime.now().setZone('Europe/London').startOf('hour');
+  const end = DateTime.local(2023, 5, 31, 11, { zone: 'Europe/London' });
 
-  const { duration, humanReadableDuration } = durationUntil(today, end);
+  const humanReadableDuration = durationUntil(now, end);
 
-  const replacement =
-    duration == 0
-      ? 'Free today?'
-      : duration > 0
-      ? `${humanReadableDuration} left`
-      : `Free? ${humanReadableDuration} waiting`;
+  const replacement = now < end ? `${humanReadableDuration} left` : 'Free!';
 
   const newNickname = `${memberToChange.nickname}`.replace(
     /\[.*\]/,
@@ -61,4 +56,4 @@ const updateNickname = async () => {
 // Log in to Discord with your client's token
 client.login(token);
 
-cron.schedule('0 23 * * *', updateNickname);
+cron.schedule('0 * * * *', updateNickname);

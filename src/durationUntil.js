@@ -14,7 +14,7 @@ function durationUntil(start, end) {
     signDisplay: 'never',
   });
 
-  return { duration, humanReadableDuration };
+  return humanReadableDuration;
 }
 
 module.exports = durationUntil;
