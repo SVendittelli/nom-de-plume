@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/SVendittelli/nom-de-plume/compare/v1.4.1...v1.5.0) (2023-05-30)
+
+
+### Features
+
+* adjust end date for the final countdown ([f86c886](https://github.com/SVendittelli/nom-de-plume/commit/f86c886cc3314685df0b11d086184f2faf69f854))
+
 ## [1.4.1](https://github.com/SVendittelli/nom-de-plume/compare/v1.4.0...v1.4.1) (2023-05-19)
 
 # [1.4.0](https://github.com/SVendittelli/nom-de-plume/compare/v1.3.14...v1.4.0) (2023-05-12)
