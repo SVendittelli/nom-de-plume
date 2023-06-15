@@ -1,3 +1,5 @@
+## [1.5.11](https://github.com/SVendittelli/nom-de-plume/compare/v1.5.10...v1.5.11) (2023-06-15)
+
 ## [1.5.10](https://github.com/SVendittelli/nom-de-plume/compare/v1.5.9...v1.5.10) (2023-06-10)
 
 ## [1.5.9](https://github.com/SVendittelli/nom-de-plume/compare/v1.5.8...v1.5.9) (2023-06-05)
