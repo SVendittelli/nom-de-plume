@@ -1,3 +1,12 @@
+# [2.1.0](https://github.com/SVendittelli/nom-de-plume/compare/v2.0.1...v2.1.0) (2023-06-16)
+
+
+### Features
+
+* **tarot:** add reversed emoji ([2ddaf4b](https://github.com/SVendittelli/nom-de-plume/commit/2ddaf4bafded409d3d4d6b68ada02fbce31d1355))
+* **tarot:** default daily to true ([f6c8669](https://github.com/SVendittelli/nom-de-plume/commit/f6c8669feb6f7969df83e45f369fef8e5f6f16d5))
+* **tarot:** set reversed status in command ([5eb2a1b](https://github.com/SVendittelli/nom-de-plume/commit/5eb2a1b638cd70c29508841dc55550190201dde8))
+
 ## [2.0.1](https://github.com/SVendittelli/nom-de-plume/compare/v2.0.0...v2.0.1) (2023-06-16)
 
 # [2.0.0](https://github.com/SVendittelli/nom-de-plume/compare/v1.5.11...v2.0.0) (2023-06-16)
