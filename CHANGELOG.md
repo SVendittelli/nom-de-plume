@@ -1,3 +1,13 @@
+# [2.0.0](https://github.com/SVendittelli/nom-de-plume/compare/v1.5.11...v2.0.0) (2023-06-16)
+
+
+* feat(tarot)!: add tarot command ([7f38a5b](https://github.com/SVendittelli/nom-de-plume/commit/7f38a5b7afef77573864f7bffe18641e2d7b6716))
+
+
+### BREAKING CHANGES
+
+* No longer does a daily count down to a date.
+
 ## [1.5.11](https://github.com/SVendittelli/nom-de-plume/compare/v1.5.10...v1.5.11) (2023-06-15)
 
 ## [1.5.10](https://github.com/SVendittelli/nom-de-plume/compare/v1.5.9...v1.5.10) (2023-06-10)
