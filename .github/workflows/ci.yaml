@@ -59,7 +59,7 @@ jobs:
         run: npm ci
       - name: Deploy slash commands
         if: github.event_name != 'pull_request'
-        run: node .\src\deploy.js
+        run: node ./src/deploy.js
         env:
           token: ${{ secrets.DISCORD_TOKEN }}
           appId: ${{ secrets.DISCORD_APP_ID }}
