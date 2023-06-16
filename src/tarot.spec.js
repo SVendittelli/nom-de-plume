@@ -1,4 +1,9 @@
-const { cardNameToEmoji } = require('./tarot');
+const { cardNameToEmoji, appendReversed } = require('./tarot');
+
+const directionCases = [
+  ['upright', '', ''],
+  ['reversed', ' reversed', '🔃'],
+];
 
 const majorArcanaCases = [
   ['the fool', '🃏'],
@@ -49,23 +54,44 @@ const valueCases = [
 ];
 
 describe('cardNameToEmoji', () => {
-  describe('major arcana', () => {
-    test.each(majorArcanaCases)('convert %p to %p', (message, expected) => {
-      expect(cardNameToEmoji(message)).toEqual(expected);
-    });
-  });
-
-  describe('minor arcana', () => {
-    describe.each(suitCases)('%s', (suit, expectedSuit) => {
-      test.each(valueCases)(
-        `convert "%s of ${suit}" to "%s${expectedSuit}"`,
-        (value, expectedValue) => {
-          const message = `${value} of ${suit}`;
-          expect(cardNameToEmoji(message)).toEqual(
-            `${expectedValue}${expectedSuit}`
+  describe.each(directionCases)('%s', (_, appendix, expectedAppendix) => {
+    describe('major arcana', () => {
+      test.each(majorArcanaCases)(
+        `should convert "%s${appendix}" to %p`,
+        (message, expected) => {
+          expect(cardNameToEmoji(message + appendix)).toStrictEqual(
+            expected + expectedAppendix
           );
         }
       );
     });
+
+    describe('minor arcana', () => {
+      describe.each(suitCases)('%s', (suit, expectedSuit) => {
+        test.each(valueCases)(
+          `should convert "%s of ${suit}${appendix}" to "%s${expectedSuit}${expectedAppendix}"`,
+          (value, expectedValue) => {
+            const message = `${value} of ${suit}${appendix}`;
+            expect(cardNameToEmoji(message)).toStrictEqual(
+              `${expectedValue}${expectedSuit}${expectedAppendix}`
+            );
+          }
+        );
+      });
+    });
+  });
+});
+
+describe('appendReversed', () => {
+  test('should not append anything', () => {
+    const expected = 'test';
+    const actual = appendReversed('test', false);
+    expect(actual).toStrictEqual(expected);
+  });
+
+  test('should append reversed emoji', () => {
+    const expected = 'test🔃';
+    const actual = appendReversed('test', true);
+    expect(actual).toStrictEqual(expected);
   });
 });
