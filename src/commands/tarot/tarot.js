@@ -19,19 +19,19 @@ module.exports = {
     .addBooleanOption((option) =>
       option
         .setName('reversed')
-        .setDescription('Was the card reversed?')
+        .setDescription('Was the card reversed? (Default False')
         .setRequired(false)
     )
     .addBooleanOption((option) =>
       option
         .setName('daily')
-        .setDescription('Should this be reset at midnight?')
+        .setDescription('Should this be reset at midnight? (Default True)')
         .setRequired(false)
     ),
   async execute(interaction) {
     const card = interaction.options.getString('card');
-    const reversed = interaction.options.getBoolean('reversed');
-    const daily = interaction.options.getBoolean('daily');
+    const reversed = interaction.options.getBoolean('reversed') ?? false;
+    const daily = interaction.options.getBoolean('daily') ?? true;
 
     const newNickname = replaceOrAppendBrackets(
       interaction.member.nickname,
