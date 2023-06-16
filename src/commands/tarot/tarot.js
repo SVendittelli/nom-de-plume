@@ -1,7 +1,7 @@
 const { SlashCommandBuilder } = require('discord.js');
 const cron = require('node-cron');
 
-const { cardNameToEmoji } = require('../../tarot');
+const { cardNameToEmoji, appendReversed } = require('../../tarot');
 const { replaceOrAppendBrackets } = require('../../nickname');
 
 module.exports = {
@@ -18,18 +18,24 @@ module.exports = {
     )
     .addBooleanOption((option) =>
       option
+        .setName('reversed')
+        .setDescription('Was the card reversed?')
+        .setRequired(false)
+    )
+    .addBooleanOption((option) =>
+      option
         .setName('daily')
         .setDescription('Should this be reset at midnight?')
         .setRequired(false)
     ),
   async execute(interaction) {
     const card = interaction.options.getString('card');
+    const reversed = interaction.options.getBoolean('reversed');
     const daily = interaction.options.getBoolean('daily');
-    console.log('card, daily', card, daily);
 
     const newNickname = replaceOrAppendBrackets(
       interaction.member.nickname,
-      cardNameToEmoji(card)
+      appendReversed(cardNameToEmoji(card), reversed)
     );
 
     if (daily) {

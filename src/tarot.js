@@ -73,13 +73,14 @@ function cardNameToEmoji(drawnCard) {
 }
 
 /**
- * Append the reverse emoji to the tarot string if the card is reversed
+ * Append the reverse emoji to the tarot string if the card is reversed and the
+ * the emoji isn't already present.
  * @param {string} emoji the string to append to
  * @param {boolean} reversed whether to append the reversed symbol or not
  * @returns the emoji string with or without the reversed symbol
  */
 function appendReversed(emoji, reversed) {
-  return reversed ? emoji + '🔃' : emoji;
+  return reversed && !emoji.endsWith('🔃') ? emoji + '🔃' : emoji;
 }
 
 module.exports = { cardNameToEmoji, appendReversed };

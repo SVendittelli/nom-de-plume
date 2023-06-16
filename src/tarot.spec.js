@@ -94,4 +94,16 @@ describe('appendReversed', () => {
     const actual = appendReversed('test', true);
     expect(actual).toStrictEqual(expected);
   });
+
+  test('should not append reversed emoji if it is already present', () => {
+    const expected = 'test🔃';
+    const actual = appendReversed('test🔃', true);
+    expect(actual).toStrictEqual(expected);
+  });
+
+  test('should not remove the reversed emoji if it is already present', () => {
+    const expected = 'test🔃';
+    const actual = appendReversed('test🔃', false);
+    expect(actual).toStrictEqual(expected);
+  });
 });
