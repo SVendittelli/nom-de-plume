@@ -1,6 +1,6 @@
 {
   "name": "nom-de-plume",
-  "version": "2.1.16",
+  "version": "2.1.17",
   "private": true,
   "description": "A discord bot to automatically update a user's nickname every day.",
   "repository": {
