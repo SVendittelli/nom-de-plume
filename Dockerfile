@@ -5,7 +5,7 @@ COPY . .
 
 RUN npm ci --omit=dev
 
-FROM gcr.io/distroless/nodejs18-debian11:latest@sha256:492e41b27114961b09bc3f19253a625ab0dec5fa1d53f8a825bffb53827ea630 as production
+FROM gcr.io/distroless/nodejs18-debian11:latest@sha256:c3627dd28e9e031c6b562eb7cb77c324b9c4635a1c05eaf8e89d2eaa364fa6f0 as production
 
 COPY --from=build /app /app
 WORKDIR /app
